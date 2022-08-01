@@ -16,7 +16,7 @@ steps:
   displayName: 'Use Python $(python.version)'
 
 - script: |
-    python -m pip install --upgrade pip
+    python3 -m pip install --upgrade pip
     pip install -r requirements.txt
   displayName: 'Install dependencies'
 
@@ -26,8 +26,3 @@ steps:
   displayName: 'pytest'
 
 - script: python test_automl.py
-
-- task: PublishCodeCoverageResults@1
-  inputs:
-    codeCoverageTool: Cobertura
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'
