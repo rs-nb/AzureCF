@@ -26,8 +26,3 @@ steps:
   displayName: 'pytest'
 
 - script: python test_automl.py
-
-- task: PublishCodeCoverageResults@1
-  inputs:
-    codeCoverageTool: Cobertura
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'
